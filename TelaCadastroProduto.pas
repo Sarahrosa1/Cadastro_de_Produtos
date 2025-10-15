@@ -1,0 +1,60 @@
+unit TelaCadastroProduto;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.NumberBox, Vcl.StdCtrls,
+  Vcl.ExtCtrls, Data.DB;
+
+type
+  TfrmTelaCadastroProduto = class(TForm)
+    pnlDados: TPanel;
+    pnlBotoes: TPanel;
+    edtNome: TEdit;
+    lblNome: TLabel;
+    lblPreco: TLabel;
+    lblQuantidade: TLabel;
+    btnSalvar: TButton;
+    btnCancelar: TButton;
+    nmbrbxPreco: TNumberBox;
+    nmbrbxQuantidade: TNumberBox;
+    procedure btnSalvarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    class procedure Adicionar(Owner: TComponent; DataSet: TDataSet);
+  end;
+
+var
+  frmTelaCadastroProduto: TfrmTelaCadastroProduto;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmTelaCadastroProduto.btnSalvarClick(Sender: TObject);
+begin
+  ModalResult := mrOk;
+end;
+
+class procedure TfrmTelaCadastroProduto.Adicionar(Owner: TComponent; DataSet: TDataSet);
+var lfrmTelaCadastroProduto: TfrmTelaCadastroProduto;
+begin
+  lfrmTelaCadastroProduto := TfrmTelaCadastroProduto.Create(Owner);
+  try
+    if (lfrmTelaCadastroProduto.ShowModal = mrOk) then
+    begin
+      DataSet.Append;
+      DataSet.FieldByName('Nome').AsString := lfrmTelaCadastroProduto.edtNome.Text;
+      DataSet.FieldByName('Preco').AsFloat := lfrmTelaCadastroProduto.nmbrbxPreco.ValueCurrency;
+      DataSet.FieldByName('Quantidade').AsInteger := lfrmTelaCadastroProduto.nmbrbxQuantidade.ValueInt;
+      DataSet.Post;
+    end;
+  finally
+    lfrmTelaCadastroProduto.Free;
+  end;
+end;
+
+end.

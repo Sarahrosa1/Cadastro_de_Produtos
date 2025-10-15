@@ -3,6 +3,7 @@ unit Lista;
 interface
 
 uses
+  TelaCadastroProduto,
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Datasnap.DBClient,
   Vcl.StdCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls;
@@ -22,6 +23,7 @@ type
     fltfldListaPreco: TFloatField;
     intgrfldListaQuantidade: TIntegerField;
     procedure FormCreate(Sender: TObject);
+    procedure btnAdicionarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,6 +36,11 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm2.btnAdicionarClick(Sender: TObject);
+begin
+ TfrmTelaCadastroProduto.Adicionar(Self, cdsLista);
+end;
 
 procedure TForm2.FormCreate(Sender: TObject);
 begin

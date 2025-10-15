@@ -2,7 +2,8 @@ program Produto;
 
 uses
   Vcl.Forms,
-  Lista in 'Lista.pas' {Form2};
+  Lista in 'Lista.pas' {Form2},
+  TelaCadastroProduto in 'TelaCadastroProduto.pas' {frmTelaCadastroProduto};
 
 {$R *.res}
 

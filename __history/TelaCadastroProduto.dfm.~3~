@@ -1,0 +1,95 @@
+object frmTelaCadastroProduto: TfrmTelaCadastroProduto
+  Left = 0
+  Top = 0
+  Caption = 'Dados do produto'
+  ClientHeight = 189
+  ClientWidth = 338
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object pnlDados: TPanel
+    Left = 0
+    Top = 0
+    Width = 338
+    Height = 140
+    Align = alClient
+    TabOrder = 0
+    ExplicitWidth = 624
+    ExplicitHeight = 386
+    object lblNome: TLabel
+      Left = 32
+      Top = 19
+      Width = 96
+      Height = 15
+      Caption = 'Nome do produto'
+    end
+    object lblPreco: TLabel
+      Left = 32
+      Top = 69
+      Width = 30
+      Height = 15
+      Caption = 'Pre'#231'o'
+    end
+    object lblQuantidade: TLabel
+      Left = 176
+      Top = 69
+      Width = 62
+      Height = 15
+      Caption = 'Quantidade'
+    end
+    object edtNome: TEdit
+      Left = 32
+      Top = 40
+      Width = 265
+      Height = 23
+      TabOrder = 0
+    end
+    object nmbrbxPreco: TNumberBox
+      Left = 32
+      Top = 90
+      Width = 121
+      Height = 23
+      Mode = nbmCurrency
+      TabOrder = 1
+    end
+    object nmbrbxQuantidade: TNumberBox
+      Left = 176
+      Top = 90
+      Width = 121
+      Height = 23
+      TabOrder = 2
+    end
+  end
+  object pnlBotoes: TPanel
+    Left = 0
+    Top = 140
+    Width = 338
+    Height = 49
+    Align = alBottom
+    TabOrder = 1
+    ExplicitTop = 392
+    ExplicitWidth = 624
+    object btnSalvar: TButton
+      Left = 167
+      Top = 11
+      Width = 75
+      Height = 25
+      Caption = 'Salvar'
+      TabOrder = 0
+      OnClick = btnSalvarClick
+    end
+    object btnCancelar: TButton
+      Left = 248
+      Top = 11
+      Width = 75
+      Height = 25
+      Caption = 'Cancelar'
+      ModalResult = 2
+      TabOrder = 1
+    end
+  end
+end

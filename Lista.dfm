@@ -1,7 +1,7 @@
 object Form2: TForm2
   Left = 0
   Top = 0
-  Caption = 'Form2'
+  Caption = 'Cadastro de produtos'
   ClientHeight = 441
   ClientWidth = 624
   Color = clBtnFace
@@ -10,6 +10,7 @@ object Form2: TForm2
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
   OnCreate = FormCreate
   TextHeight = 15
   object pnlLista: TPanel
@@ -19,10 +20,6 @@ object Form2: TForm2
     Height = 400
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 176
-    ExplicitTop = 40
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object lblListaProdutos: TLabel
       Left = 32
       Top = 10
@@ -46,7 +43,7 @@ object Form2: TForm2
         item
           Expanded = False
           FieldName = 'Nome'
-          Width = 281
+          Width = 274
           Visible = True
         end
         item
@@ -59,7 +56,7 @@ object Form2: TForm2
         item
           Expanded = False
           FieldName = 'Quantidade'
-          Width = 204
+          Width = 126
           Visible = True
         end>
     end
@@ -71,7 +68,6 @@ object Form2: TForm2
     Height = 41
     Align = alBottom
     TabOrder = 1
-    ExplicitTop = 391
     object btnAdicionar: TButton
       Left = 350
       Top = 5
@@ -79,6 +75,7 @@ object Form2: TForm2
       Height = 25
       Caption = 'Adicionar'
       TabOrder = 0
+      OnClick = btnAdicionarClick
     end
     object btnEditar: TButton
       Left = 434

@@ -1,0 +1,35 @@
+unit TelaCadastroProduto;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.NumberBox, Vcl.StdCtrls,
+  Vcl.ExtCtrls;
+
+type
+  TfrmTelaCadastroProduto = class(TForm)
+    pnlDados: TPanel;
+    pnlBotoes: TPanel;
+    edtNome: TEdit;
+    lblNome: TLabel;
+    lblPreco: TLabel;
+    lblQuantidade: TLabel;
+    btnSalvar: TButton;
+    btnCancelar: TButton;
+    nmbrbxPreco: TNumberBox;
+    nmbrbxQuantidade: TNumberBox;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmTelaCadastroProduto: TfrmTelaCadastroProduto;
+
+implementation
+
+{$R *.dfm}
+
+end.
